@@ -6,3 +6,10 @@ def print_hi(name: object) -> object:
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
+    k = int(input())
+    try:
+        check = 100 / k
+    except ArithmeticError:
+        print(f'check вылетело за границы пустоты, k было равно {k}')
+    else:
+        print(f'да всё норм')
