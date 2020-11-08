@@ -1,4 +1,4 @@
-This is my first repo.
+This is my first repo with Python exercises.
 I'll learn Python with it.
 
-Writed via **ghostrunner**.
+Written via **PyCharm**.
