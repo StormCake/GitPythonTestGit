@@ -10,6 +10,6 @@ if __name__ == '__main__':
     try:
         check = 100 / k
     except ArithmeticError:
-        print(f'check вылетело за границы пустоты, k было равно {k}')
+        print(f'check flew beyond the boundaries of the void, k = {k}')
     else:
-        print(f'да всё норм')
+        print(f'that\'s fine')
