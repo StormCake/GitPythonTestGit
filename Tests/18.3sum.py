@@ -6,6 +6,6 @@ b = int(input())
 c = int(input())
 if a == b == c:
     result = 3 * (a+b+c)
-    print(f'Получается да, {result}')
+    print(result)
 else:
-    print("не")
+    print("nay")
