@@ -2,6 +2,7 @@
 # Также было бы хорошо сделать это демоном
 from pyautogui import position
 from time import sleep
+import daemon
 # import sys  # может понадобиться для ОС Windows
 
 
@@ -17,7 +18,7 @@ def GetMousePosition():
                 print("Координаты текущей позиции: ", current_position[-6:], ", предыдущей: ", previous_position[-6:])
                 print()
                 previous_position = current_position
-            sleep(0.5)
+            sleep(0.25)
     except KeyboardInterrupt:
         print("\n")
 
@@ -26,5 +27,9 @@ def GetMousePosition():
     return current_position.x, current_position.y
 
 
-CursorPosition = GetMousePosition()
-print("x =", CursorPosition[0], " y =", CursorPosition[1])
+logfile = open('mouse_daemon.log', 'w')
+context = daemon.DaemonContext(stdout=logfile, stderr=logfile)
+context.open()
+with context:
+    CursorPosition = GetMousePosition()
+    print("x =", CursorPosition[0], " y =", CursorPosition[1])
