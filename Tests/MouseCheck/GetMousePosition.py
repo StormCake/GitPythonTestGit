@@ -1,12 +1,15 @@
 # Нужно написать приложение, для проверки местоположения курсора:
 # *куда-то* будет отправляться информация о точных координатах курсора
-def GetMousePosition():
-    import pyautogui
-    # import sys  # может понадобиться для ОС Windows
+import pyautogui
+import time
+# import sys  # может понадобиться для ОС Windows
 
+
+def GetMousePosition():
     previous_position = current_position = pyautogui.position()
     try:
         while True:
+            current_position = pyautogui.position()
             if current_position != previous_position:
                 export = "CurrentPosition: \tx = " + str(current_position.x) + ", \ty = " + str(current_position.y) + \
                          "\nPreviousPosition: \tx = " + str(previous_position.x) + ", \ty = " + str(previous_position.y)
@@ -14,7 +17,7 @@ def GetMousePosition():
                 print("Координаты текущей позиции: ", current_position[-6:], ", предыдущей: ", previous_position[-6:])
                 print()
                 previous_position = current_position
-            current_position = pyautogui.position()
+            time.sleep(0.5)
     except KeyboardInterrupt:
         print("\n")
 
