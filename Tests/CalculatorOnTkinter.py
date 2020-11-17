@@ -38,13 +38,5 @@ button_multiply.grid(column=0, row=3, padx=2, pady=2)
 button_divide.grid(column=1, row=3, padx=2, pady=2)
 label_result.grid(column=0, row=4, columnspan=2)
 
-
-# entry_for_a.pack()
-# entry_for_b.pack()
-# button_plus.pack()
-# button_minus.pack()
-# button_multiply.pack()
-# button_divide.pack()
-# label_result.pack()
 entry_for_a.focus()
 root.mainloop()
